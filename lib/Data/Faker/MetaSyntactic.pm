@@ -21,3 +21,56 @@ for my $theme ( $meta->themes ) {
 
 1;
 
+__END__
+
+=head1 NAME
+
+Data::Faker::MetaSyntactic - Data::Faker plugin for metasyntactic data
+
+=head1 SYNOPSIS
+
+    use Data::Faker 'MetaSyntactic';
+
+    my $faker = Data::Faker->new();
+
+    # using themes from Acme-MetatSyntactic-Themes
+    say "First name        ", ucfirst $faker->meta_crypto;
+    say "Favorite colour:  ", $faker->meta_colours;
+    say "Favorite flavour: ", $faker->meta_ben_and_jerry;
+    say "Random stuff:     ", join " ", map $faker->meta, 1 .. 4;
+
+=head1 DESCRIPTION
+
+See L<Data::Faker>.
+
+=head1 DATA PROVIDERS
+
+Each and every installed L<Acme::MetaSyntactic> theme can be a data
+provider. If theme name is C<$theme>, the corresponding  data provider
+is named C<meta_I<$theme>>.
+
+For example, data from theme C<foo> will be provided via C<meta_foo>.
+
+The C<meta> provider is a synonym for C<meta_any>, which gets data from
+a random theme.
+
+=head1 SEE ALSO
+
+L<Data::Faker>,
+L<Acme::MetaSyntactic>,
+L<Task::MetaSyntactic>.
+
+=head1 AUTHOR
+
+Philippe Bruhat (BooK) <book@cpan.org>
+
+=head1 COPYRIGHT
+
+Copyright 2014 Philippe Bruhat (BooK), all rights reserved.
+
+=head1 LICENSE
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
+
+=cut
