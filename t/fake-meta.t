@@ -6,8 +6,8 @@ use Data::Faker 'MetaSyntactic';
 use Acme::MetaSyntactic ();
 
 # test using all themes
-my @themes = grep ! /^(?:any|random)$/, Acme::MetaSyntactic->themes;
-my $meta   = Acme::MetaSyntactic->new;
+my @themes = grep !/^(?:any|random)$/, Acme::MetaSyntactic->themes;
+my $meta = Acme::MetaSyntactic->new;
 my %all;
 
 plan tests => @themes + 2;
@@ -15,9 +15,9 @@ plan tests => @themes + 2;
 my $faker = Data::Faker->new;
 for my $theme ( sort @themes ) {
     my $provider = "meta_$theme";
-    my %item = map +( $_ => 1 ), $meta->name( $theme => 0 );
-    my $item = $faker->$provider;
-    ok( exists $item{$item}, "$theme: $item" );
+    my %item     = map +( $_ => 1 ), $meta->name( $theme => 0 );
+    my $item     = $faker->$provider;
+    ok( exists $item{$item}, "$provider: $item" );
     @all{ keys %item } = values %item;
 }
 
