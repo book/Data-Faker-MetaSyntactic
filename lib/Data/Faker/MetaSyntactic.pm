@@ -41,7 +41,13 @@ Data::Faker::MetaSyntactic - Data::Faker plugin for metasyntactic data
 
 =head1 DESCRIPTION
 
-See L<Data::Faker>.
+L<Data::Faker> I<creates fake (but reasonable) data that can be used for things
+such as filling databases with fake information during development of
+database related applications.>
+
+This module is a plugin that taps into the data provided by L<Acme::MetaSyntactic>.
+
+See L<Data::Faker> for details.
 
 =head1 DATA PROVIDERS
 
